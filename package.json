@@ -1,0 +1,40 @@
+{
+  "name": "fastify-dns-prefetch-control",
+  "version": "0.1.0",
+  "description": "Fastify plugin to set X-DNS-Prefetch-Control header",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poppinlp/fastify-dns-prefetch-control.git"
+  },
+  "keywords": [
+    "fastify",
+    "fastify-plugin",
+    "helmet",
+    "dns-prefetch-control"
+  ],
+  "author": "PoppinL",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/poppinlp/fastify-dns-prefetch-control/issues"
+  },
+  "homepage": "https://github.com/poppinlp/fastify-dns-prefetch-control#readme",
+  "engines": {
+    "node": ">= 6"
+  },
+  "dependencies": {
+    "fastify-plugin": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-handsome": "^0.5.0",
+    "eslint-config-prettier": "^2.9.0",
+    "prettier": "^1.13.2"
+  },
+  "peerDependencies": {
+    "fastify": "^1.0.0"
+  }
+}
