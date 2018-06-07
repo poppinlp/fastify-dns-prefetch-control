@@ -22,6 +22,9 @@
     "helmet",
     "dns-prefetch-control"
   ],
+  "files": [
+    "src"
+  ],
   "author": "PoppinL",
   "license": "MIT",
   "bugs": {
