@@ -1,6 +1,6 @@
 const fp = require('fastify-plugin');
 
-const dnsPrefetchControl = (app, opts = {}, next) => {
+const dnsPrefetchControl = (app, opts, next) => {
 	const header = opts.allow ? 'on' : 'off';
 
 	app.addHook('onSend', (request, reply, payload, next) => {

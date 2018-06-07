@@ -1,0 +1,4 @@
+Average req/sec in 5 times 10s test
+with no plugin: 30595.92
+with dns-prefetch-control middleware: 27587.57
+with fastify-dns-prefetch-control plugin: 28493.70

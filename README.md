@@ -1,5 +1,7 @@
 # fastify-dns-prefetch-control
 
+[![Build Status][ci-img]][ci-url]
+[![Code coverage][cov-img]][cov-url]
 [![Code style][lint-img]][lint-url]
 [![Dependency Status][dep-img]][dep-url]
 [![Dev Dependency Status][dev-dep-img]][dev-dep-url]
@@ -13,49 +15,7 @@ Fastify plugin to set X-DNS-Prefetch-Control header
 
 You may know [dns-prefetch-control](https://github.com/helmetjs/dns-prefetch-control) as a [dns-prefetch-control middleware](https://helmetjs.github.io/docs/dns-prefetch-control/) used in [helmet](https://github.com/helmetjs/helmet). And you could use it as a middleware in fastify also. So why i made this plugin?
 
-Benchmark with no plugin:
-
-```txt
-Running 20s test @ http://127.0.0.1:10290/pudge/rest/v0/benchmark
-1000 connections
-
-Stat         Avg     Stdev   Max
-Latency (ms) 32.37   8.9     1139.09
-Req/Sec      30444   1051.31 31048
-Bytes/Sec    4.53 MB 170 kB  4.63 MB
-
-609k requests in 20s, 90.7 MB read
-```
-
-Benchmark with dns-prefetch-control as middleware:
-
-```txt
-Running 20s test @ http://127.0.0.1:10290/pudge/rest/v0/benchmark
-1000 connections
-
-Stat         Avg     Stdev   Max
-Latency (ms) 30.76   201.01  9993.16
-Req/Sec      26705.6 1651.31 27538
-Bytes/Sec    4.77 MB 302 kB  4.9 MB
-
-534k requests in 20s, 95.1 MB read
-```
-
-Benchmark with this plugin:
-
-```txt
-Running 20s test @ http://127.0.0.1:10290/pudge/rest/v0/benchmark
-1000 connections
-
-Stat         Avg     Stdev  Max
-Latency (ms) 34.61   8.45   366.66
-Req/Sec      28504.8 1119.9 29249
-Bytes/Sec    5.03 MB 187 kB 5.21 MB
-
-570k requests in 20s, 101 MB read
-```
-
-So that's the reason and wish you like it. :)
+You may find the reason in [benchmark result](./benchmarks/benchmark.txt) and wish you like it. :)
 
 ## Install
 
@@ -95,14 +55,17 @@ Set `X-DNS-Prefetch-Control` to `on` if it's a truly value and `off` for a false
 
 ## Changelog
 
-- 0.1.0: Init version
+- 0.2.0
+  - Add test case
+  - Add code coverage
+  - Add benchmarks
+- 0.1.0:
+  - Init version
 
-## Todo
-
-- Add test case
-- Add ci
-- Add benchmark scripts
-
+[ci-img]: https://img.shields.io/travis/poppinlp/fastify-dns-prefetch-control.svg?style=flat-square
+[ci-url]: https://travis-ci.org/poppinlp/fastify-dns-prefetch-control
+[cov-img]: https://img.shields.io/coveralls/poppinlp/fastify-dns-prefetch-control.svg?style=flat-square
+[cov-url]: https://coveralls.io/github/poppinlp/fastify-dns-prefetch-control?branch=master
 [lint-img]: https://img.shields.io/badge/code%20style-handsome-brightgreen.svg?style=flat-square
 [lint-url]: https://github.com/poppinlp/eslint-config-handsome
 [dep-img]: https://img.shields.io/david/poppinlp/fastify-dns-prefetch-control.svg?style=flat-square
