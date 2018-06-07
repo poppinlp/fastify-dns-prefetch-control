@@ -1,6 +1,6 @@
 {
   "name": "fastify-dns-prefetch-control",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Fastify plugin to set X-DNS-Prefetch-Control header",
   "main": "src/index.js",
   "scripts": {
