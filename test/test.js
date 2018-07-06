@@ -12,38 +12,24 @@ test.beforeEach(t => {
 	t.context.app = app;
 });
 
-const testHandler = (t, opts, expectedHeader) => {
-	const { app } = t.context;
+const mock = async (t, opts, expected) => {
+	const rsp = await t.context.app.register(plugin, opts).inject({
+		method: 'get',
+		url: '/'
+	});
+	const header = rsp.headers['x-dns-prefetch-control'];
 
-	t.plan(3);
-	app.register(plugin, opts);
-	app.inject(
-		{
-			method: 'GET',
-			url: `/`
-		},
-		(err, res) => {
-			const expected = {
-				payload: 'hello world',
-				header: expectedHeader
-			};
-			const target = {
-				payload: res.payload,
-				header: res.headers['x-dns-prefetch-control']
-			};
-
-			t.is(err, null, 'should throw no error');
-			t.is(target.payload, expected.payload, 'should have expected response payload');
-			t.is(target.header, expected.header, 'should have expected response header');
-			t.end();
-		}
-	);
+	t.is(header, expected);
 };
 
-test.cb('default option', t => {
-	testHandler(t, {}, 'off');
+test('sets the header to "off" by default', async t => {
+	await mock(t, {}, 'off');
 });
 
-test.cb('set allow to true', t => {
-	testHandler(t, { allow: true }, 'on');
+test('can set header to "off" with configuration', async t => {
+	await mock(t, { allow: false }, 'off');
+});
+
+test('can set header to "on" with configuration', async t => {
+	await mock(t, { allow: true }, 'on');
 });

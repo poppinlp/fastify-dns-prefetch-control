@@ -17,6 +17,11 @@ You may know [dns-prefetch-control](https://github.com/helmetjs/dns-prefetch-con
 
 You may find the reason in [benchmark result](./benchmarks/benchmark.txt) and wish you like it. :)
 
+## Difference
+
+This plugin has passed all [dns-prefetch-control](https://github.com/helmetjs/dns-prefetch-control) test cases.
+And no difference in options.
+
 ## Install
 
 Via npm:

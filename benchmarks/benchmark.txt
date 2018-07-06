@@ -1,4 +1,8 @@
-Average req/sec in 5 times 10s test
-with no plugin: 30595.92
-with dns-prefetch-control middleware: 27587.57
-with fastify-dns-prefetch-control plugin: 28493.70
+node version: v10.6.0
+platform: darwin
+cpus: [{"model":"Intel(R) Core(TM) i7-5557U CPU @ 3.10GHz","speed":3100,"times":{"user":72006890,"nice":0,"sys":38959020,"idle":280367560,"irq":0}},{"model":"Intel(R) Core(TM) i7-5557U CPU @ 3.10GHz","speed":3100,"times":{"user":39444440,"nice":0,"sys":16661050,"idle":335208610,"irq":0}},{"model":"Intel(R) Core(TM) i7-5557U CPU @ 3.10GHz","speed":3100,"times":{"user":69458580,"nice":0,"sys":32847430,"idle":289008140,"irq":0}},{"model":"Intel(R) Core(TM) i7-5557U CPU @ 3.10GHz","speed":3100,"times":{"user":40182320,"nice":0,"sys":16193300,"idle":334938440,"irq":0}}]
+
+Average req/sec in 3 times 10s test
+with no plugin: 24041.97
+with dns-prefetch-control middleware: 19728.43
+with fastify-dns-prefetch-control plugin: 23553.27
